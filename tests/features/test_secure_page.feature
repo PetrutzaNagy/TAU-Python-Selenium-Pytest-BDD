@@ -4,4 +4,3 @@ Feature: Test Add Remove Elements functionality
         Given the user is logged in
         When the user click on logout button
         Then "You logged out of the secure area!" success message is displayed
-        And the user is on login page

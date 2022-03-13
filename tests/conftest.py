@@ -1,6 +1,7 @@
 import selenium.webdriver
 import pytest
 import selenium.webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -30,7 +31,9 @@ def _capture_screenshot():
 def browser():
 #     before tests
     global driver
-    driver = selenium.webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    options = Options()
+    options.add_argument('--headless')
+    driver = selenium.webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
     driver.implicitly_wait(10)
     yield driver
 #     quit driver ; after tests

@@ -19,6 +19,6 @@ Feature: Test login functionality
 
       Examples: Username and passwords and message error
        | username| password| error |
-       | tomsmith |   dsfdf | Your password is invalid! |
+       | tomsmith |   dsfdf | Your password is invalid! cbvcnbnn|
        | fdsfd    |   SuperSecretPassword!  | Your username is invalid! |
        | TOMSMITH   |  SuperSecretPassword!  | Your username is invalid! |

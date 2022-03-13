@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class LoginPage:
     #locators
@@ -34,5 +36,10 @@ class LoginPage:
         self.insert_password_field(password)
         self.click_login_button()
 
+
     def get_current_url(self):
        return self.browser.current_url
+
+    def wait_for_login_button(self):
+        wait = WebDriverWait(self.browser, 5)
+        wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON))

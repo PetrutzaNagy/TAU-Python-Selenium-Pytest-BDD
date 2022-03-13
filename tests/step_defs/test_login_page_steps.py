@@ -53,3 +53,4 @@ def check_url(browser):
 def check_flash_message(browser, message):
     secure_page = SecurePage(browser)
     assert message in secure_page.get_flash_message(), "Flash message is not ok"
+
